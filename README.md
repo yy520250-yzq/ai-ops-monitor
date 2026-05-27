@@ -1,40 +1,52 @@
-# AI Ops Monitoring with Anomaly Detection
+# AI Ops 监控平台
 
-基于 Python + Machine Learning 的 AI 运维异常检测系统。
+面向 Linux 基础设施的 AI 驱动异常检测与可观测性平台。
 
-## Features
+本项目利用机器学习技术，在不依赖静态阈值的情况下识别 CPU 和内存的异常行为。
 
-- Linux 服务器指标采集
-- CPU / Memory 监控
-- Isolation Forest 异常检测
-- AI Ops 可视化分析
-- 异常聚类识别
-- 无监督机器学习检测
+该平台模拟了真实的基础设施监控场景，并展示了 AIOps 系统如何通过无监督学习自动检测异常。
+
+## 概述
+
+传统监控系统严重依赖静态阈值规则：
+
+- CPU > 80%
+- 内存 > 90%
+- 磁盘 > 95%
+
+然而，真实的生产环境故障往往是渐进且基于模式的。
+本项目使用机器学习自动检测异常行为趋势。
+
+## 特性
+
+- Linux 基础设施指标采集
+- CPU / 内存监控
+- 机器学习异常检测
+- 孤立森林无监督学习
+- AIOps 可视化
+- 机器学习聚类分析
+- 基于趋势的异常识别
+- 基础设施可观测性概念验证
 
 ---
 
-## Tech Stack
+## 架构
 
-- Python
-- Pandas
-- Scikit-learn
-- Matplotlib
-- psutil
-- Linux
-- AI Ops
-
----
-
-## Architecture
-
-Monitor -> Metrics -> ML Model -> Anomaly Detection -> Visualization
-
----
-
-## Run
-
-### 1. Create virtual env
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
+```text
+Linux 指标
+    ↓
+collector.py
+    ↓
+metrics.csv
+    ↓
+train_model.py
+    ↓
+孤立森林模型
+    ↓
+detector.py
+    ↓
+异常检测
+    ↓
+visualize.py
+    ↓
+可视化与分析
