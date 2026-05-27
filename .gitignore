@@ -1,0 +1,18 @@
+# 虚拟环境
+venv/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 日志文件
+*.log
+
+# 系统文件
+.DS_Store
+
+# 如果你不想忽略 CSV，可以注释掉下面这行：
+# *.csv
+
+# 或者只排除某些特定的 CSV（保留示例数据）
+# metrics_*.csv   ← 注释掉这一行
